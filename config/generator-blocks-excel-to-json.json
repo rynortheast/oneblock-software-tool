@@ -1,6 +1,8 @@
 {
   "path-xlsx-file": "",
-  "name-result-file": "",
 
-  "path-folder-for-result": ""
+  "name-result-file": "",
+  "path-folder-for-result": "",
+
+  "number-list-xlsx-file": ""
 }
