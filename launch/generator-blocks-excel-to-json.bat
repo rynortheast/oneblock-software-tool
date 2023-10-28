@@ -9,13 +9,13 @@ if %answer% EQU 1 (
 
 ) else (
 
-    if not exist "./../node_modules" (
+    if not exist "./../src/node_modules" (
 
-        cmd /c cd ./.. & npm i & cls & node ./../src/generator-blocks-excel-to-json/index.js & pause
+        cmd /c & cd ./../src & npm i & cls & cd ./../src/generator-blocks-excel-to-json & node index.js & pause
 
     ) else (
 
-        cmd /c node ./../src/generator-blocks-excel-to-json/index.js & pause
+        cmd /c & cd ./../src/generator-blocks-excel-to-json & node index.js & pause
 
     )
 
