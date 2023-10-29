@@ -3,7 +3,7 @@ const { save_json_to_file } = require("./save_json_to_file.js");
 const { catch_error } = require("./catch_error.js");
 const { conf } = require("./get_configuration.js");
 
-if (conf["path-xlsx-file"]) {
+if (conf["path-xlsx-file"] && conf["path-xlsx-file"].length > 5) {
   if (
     conf["path-xlsx-file"].includes(".xlsx", conf["path-xlsx-file"].length - 6)
   ) {
@@ -13,5 +13,5 @@ if (conf["path-xlsx-file"]) {
     catch_error(2);
   }
 } else {
-  console.log("Path to EXCEL file is not specified");
+  catch_error(5);
 }

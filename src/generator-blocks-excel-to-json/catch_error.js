@@ -7,6 +7,8 @@ module.exports.catch_error = (code, aux) => {
     console.log("ERROR < 3 > There are no mines in the excel file");
   else if (code === 4)
     console.log("ERROR < 4 > Not enough basic information for mine #" + aux);
+  else if (code === 5)
+    console.log("ERROR < 5 > Incorrect path to the xlsx file");
   else if (code === 100)
     console.log("ERROR < 100 > Error saving JSON file: " + aux);
   process.exit(1);
