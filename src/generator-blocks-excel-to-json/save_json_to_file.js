@@ -4,7 +4,7 @@ const fs = require("fs");
 const { conf } = require("./get_configuration.js");
 const { catch_error } = require("./catch_error.js");
 
-module.exports.SaveJsonToFile = (JSON_CONFIG_MINES) => {
+module.exports.save_json_to_file = (JSON_CONFIG_MINES) => {
   let path_with_name_file = null;
 
   if (conf["path-folder-for-result"])

@@ -24,6 +24,8 @@ const get_list_mine = (MAIN_DATA) => {
     return r;
   }, []);
 
+  if (borders_between_mines.length === 0) catch_error(3);
+
   return MAIN_DATA[0]
     .filter((v) => v)
     .reduce((r, _, i) => {
@@ -44,10 +46,10 @@ const get_list_mine = (MAIN_DATA) => {
 module.exports.transfer_excel_to_json = (file) => {
   const MAIN_DATA = get_data_from_excel(file);
   const MINES = get_list_mine(MAIN_DATA);
-
   // TODO: later it is necessary to check this block and possibly optimize
   const JSON_CONFIG_MINES = MINES.reduce(
     (result, mine, mine_index) => {
+      // TODO: It is necessary to make the assembly flexible, and not dependent on the numbers in the code
       const LEVELS = mine.map((v) =>
         v.slice(
           0,
@@ -61,6 +63,9 @@ module.exports.transfer_excel_to_json = (file) => {
         (v) => v.slice(mine[7].slice(7).findIndex((v) => !v) + 7),
         mine[7].length
       );
+
+      if (mine[1].slice(0, 6).includes() == true)
+        catch_error(4, mine_index + 1);
 
       result.generatorMines[mine_index + 1] = {
         id: mine[1][0],
